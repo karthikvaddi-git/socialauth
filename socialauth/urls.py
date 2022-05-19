@@ -19,7 +19,11 @@ from django.contrib import admin
 
 from django.urls import re_path as url
 from django.urls import include
+from django.urls import path,include
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url('',include('socialapp.urls'))
+    path('admin/', admin.site.urls),
+    path('',include('socialapp.urls')),
+    path('accounts/', include('allauth.urls')),
+
 ]
